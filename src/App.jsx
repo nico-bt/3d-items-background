@@ -1,6 +1,7 @@
 import { Environment, Float, Scroll, ScrollControls } from "@react-three/drei"
 import { Bird } from "./components/Bird"
 import { Seagull } from "./components/Seagull"
+import HtmlContent from "./components/HtmlContent"
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       {/* <ambientLight /> */}
 
       <ScrollControls pages={3} damping={0.2}>
-        <Scroll style={{ height: "100vh" }}>
+        <Scroll style={{ minHeight: "100vh" }}>
           <Float speed={2} rotationIntensity={6} floatIntensity={0.2} floatingRange={[1, 1]}>
             <Bird position={[1.5, -1.5, 0]} scale={1.5} />
             <Seagull rotation={[0, 0.5, 0]} position={[-2.5, -0.5, 0]} scale={1.5} />
@@ -17,17 +18,7 @@ function App() {
         </Scroll>
 
         <Scroll html style={{ width: "100%" }}>
-          <>
-            <section>
-              <h1>Section 1</h1>
-            </section>
-            <section>
-              <h1>Section 2</h1>
-            </section>
-            <section>
-              <h1>Section 3</h1>
-            </section>
-          </>
+          <HtmlContent />
         </Scroll>
       </ScrollControls>
     </>
