@@ -6,8 +6,7 @@ import HtmlContent from "./components/HtmlContent"
 function App() {
   return (
     <>
-      <Environment preset="sunset" />
-      {/* <ambientLight /> */}
+      <Environment files={"/venice_sunset_1k.hdr"} />
 
       <ScrollControls pages={3} damping={0.2}>
         <Scroll style={{ minHeight: "100vh" }}>
